@@ -17,16 +17,20 @@ INSTANCE_ID=(aws ec2 run-instances \
 --output text)
 
 if [ $instance == "frontend" ]; then
-        IP=$(aws ec2 describe-instances \
+        IP=$(
+            aws ec2 describe-instances \
             --instance-ids $INSTANCE_ID \
             --query 'Reservations[].Instances[].PublicIpAddress' \
-            --output text)
+            --output text
+            )
         RECORD_NAME="$DOMAIN_NAME" # pvraolearns.online
     else
-        IP=$(aws ec2 describe-instances \
+        IP=$(
+            aws ec2 describe-instances \
             --instance-ids $INSTANCE_ID \
             --query 'Reservations[].Instances[].PrivateIpAddress' \
-            --output text)
+            --output text
+            )
         RECORD_NAME="$instance.$DOMAIN_NAME" # mongodb.daws88s.online
     fi
     echo "IP Address: $IP"
