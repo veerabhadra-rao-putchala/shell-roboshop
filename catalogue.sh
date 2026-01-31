@@ -19,9 +19,9 @@ mkdir -p $LOGS_FOLDER
 
 VALIDATE(){
     if [ $1 -eq 0 ]; then
-        echo -e "$2 ... $R SUCCESS $N" | tee -a $LOGS_FILE
+        echo -e "$2 ... $G SUCCESS $N" | tee -a $LOGS_FILE
     else
-        echo -e "$2 ... $G FAILURE $N" | tee -a $LOGS_FILE
+        echo -e "$2 ... $R FAILURE $N" | tee -a $LOGS_FILE
         exit 1
     fi
 }
