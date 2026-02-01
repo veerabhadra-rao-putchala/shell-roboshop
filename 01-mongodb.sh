@@ -40,4 +40,3 @@ VALIDATE $? "Allowing Remote Connections"
 
 systemctl restart mongod
 VALIDATE $? "Restarting the Mongodb"
-
