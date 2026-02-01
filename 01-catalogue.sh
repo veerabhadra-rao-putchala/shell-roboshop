@@ -35,7 +35,7 @@ VALIDATE $? "Disabling nodejs default version"
 dnf install nodejs -y  &>> $LOGS_FILE
 VALIDATE $? "Installing NodeJS"
 
-id roboshop $>> $LOGS_FILE
+id roboshop &>> $LOGS_FILE
 if [ $? -eq 0 ]
 then
     useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
